@@ -23,10 +23,19 @@
 <template name="Cabecalho">
   <a href="/">Inicio</a>
   <a href="/sobre">Sobre</a>
+  <a href="/contato">Contato</a>
 </template>
 
 
 <template name="LayoutPrincipal">
   {{> Cabecalho}}
   {{> Template.dynamic template=main}}
+</template>
+
+
+<template name="Contato">
+  <h1>Fale conosco</h1>
+  <p>Nós queremos te ouvir :)</p>
+  <p>+55 11 123423421341241</p>
+  <p>email@email.com</p>
 </template>
