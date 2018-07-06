@@ -1,5 +1,9 @@
 /* basic typeahead styles */
 
+body {
+	background-color: #efefef; 
+}
+
 .tt-query,
 .tt-hint {
   width: 396px;
@@ -57,4 +61,9 @@
 
 .tt-suggestion p {
   margin: 0;
-}/* CSS declarations go here */
+}
+
+
+
+
+
