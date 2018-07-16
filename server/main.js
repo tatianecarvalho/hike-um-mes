@@ -15,3 +15,11 @@ AccountsTemplates.configure({
   	});   	
   }
 });
+
+Meteor.publish("posts",function() {
+	return Posts.find();
+});
+
+Meteor.publish("comentarios", function(idDoPost) {
+  return Comentarios.find({post: idDoPost});
+});
