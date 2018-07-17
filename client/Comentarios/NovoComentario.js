@@ -1,11 +1,13 @@
 Template.NovoComentario.events({
 	"submit form": function(evento, template) {
 		evento.preventDefault();
- 		var texto = evento.target.texto.value;
- 		var idDoPost = template.data._id;
+		if (evento.target.texto.value !== "") {
+	 		var texto = evento.target.texto.value;
+	 		var idDoPost = template.data._id;
 
- 		Meteor.call("inserirComentario", texto, idDoPost);
+	 		Meteor.call("inserirComentario", texto, idDoPost);
 
- 		evento.target.texto.value="";
-	}
+	 		evento.target.texto.value="";
+	 	}	
+	}	
 });

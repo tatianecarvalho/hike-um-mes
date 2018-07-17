@@ -4,14 +4,16 @@ Template.NovoPost.onCreated(function() {
 
 Template.NovoPost.events({
 	"submit form": function(evento, template) {
-		evento.preventDefault();
-		var textoDoFormulario = evento.target.texto.value;
-    var urlDaImagem = template.urlDaImagem.get();
-    console.log(urlDaImagem);
-		Meteor.call("inserirPost",textoDoFormulario, urlDaImagem);
+    evento.preventDefault();
+    if (evento.target.texto.value !== "") {
+  		var textoDoFormulario = evento.target.texto.value;
+      var urlDaImagem = template.urlDaImagem.get();
 
-		evento.target.texto.value="";
-    document.getElementById("fileInput").value = "";
+  		Meteor.call("inserirPost",textoDoFormulario, urlDaImagem);
+
+  		evento.target.texto.value="";
+      document.getElementById("fileInput").value = "";
+    }  
 	},
 
   "change .myFileInput": function(event, template) {
